@@ -7,7 +7,7 @@
 
 #include<iostream>
 #include<thread>
-#include "../TextSearchComp/ISearch.h"
+#include "SearchEngine.h"
 
 int main(int argc, char** argv) 
 {
@@ -33,11 +33,11 @@ int main(int argc, char** argv)
         std::cout << "main thread " << this_id << " is running" <<std::endl;
         std::cout << "========================================\n";
         
-	IFileMgr* IfileMgr = FileMgrFactory::CreateFileMgr();
-	ISearch* searchInstance = SearchCompFactory::CreateSearchComp();
-	searchInstance->setFileMgr(IfileMgr);
-	searchInstance->startSearching(path, filePatterns, regStr);
+	ISearchEngine* pSearchEngine = new SearchEngine();
+        pSearchEngine->startSearching(path, filePatterns, regStr);
         
+        while(!pSearchEngine->done()){}
+        std::cout << "\n\n=================\nend of processing\n";
 	return 0;
 }
 

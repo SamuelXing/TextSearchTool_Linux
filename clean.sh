@@ -1,16 +1,18 @@
 #!/bin/sh
 
-# compile FileMgrComp
+# clean FileMgrComp
 cd FileMgrComp
 make clean
 
-# compile TextSearchComp
-cd TextSearchComp
+# clean TextSearchComp
+cd ../TextSearchComp
 make clean
 
-# compile client
-cd Client
+# clean client
+cd ../Client
 make clean
+
+cd ..
 
 
 

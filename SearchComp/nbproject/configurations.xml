@@ -4,7 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>SearchEngine.h</itemPath>
+      <itemPath>ISearch.h</itemPath>
+      <itemPath>Search.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +14,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main.cpp</itemPath>
+      <itemPath>Search.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -29,27 +30,22 @@
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
-    <conf name="Debug" type="1">
+    <conf name="Debug" type="2">
       <toolsSet>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
-        <linkerTool>
-          <linkerLibItems>
-            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
-            <linkerLibFileItem>../FileMgrComp/dist/Debug/GNU-Linux/libFileMgrComp.so</linkerLibFileItem>
-            <linkerLibFileItem>../SearchComp/dist/Debug/GNU-Linux/libSearchComp.so</linkerLibFileItem>
-          </linkerLibItems>
-        </linkerTool>
       </compileType>
-      <item path="SearchEngine.h" ex="false" tool="3" flavor2="0">
+      <item path="ISearch.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="8">
+      <item path="Search.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="Search.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
-    <conf name="Release" type="1">
+    <conf name="Release" type="2">
       <toolsSet>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
@@ -69,9 +65,11 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="SearchEngine.h" ex="false" tool="3" flavor2="0">
+      <item path="ISearch.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Search.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Search.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

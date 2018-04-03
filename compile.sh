@@ -5,12 +5,13 @@ cd FileMgrComp
 make
 
 # compile TextSearchComp
-cd TextSearchComp
+cd ../SearchComp
 make
 
 # compile client
-cd Client
-make 
+cd ../Client
+make
 
+cd ..
 
 
