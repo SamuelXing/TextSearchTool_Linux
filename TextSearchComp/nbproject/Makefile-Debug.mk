@@ -56,18 +56,18 @@ LDLIBSOPTIONS=../FileMgrComp/dist/Debug/GNU-Linux/libFileMgrComp.so -lpthread
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libTextSearchComp.${CND_DLIB_EXT}
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/textsearchcomp
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libTextSearchComp.${CND_DLIB_EXT}: ../FileMgrComp/dist/Debug/GNU-Linux/libFileMgrComp.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/textsearchcomp: ../FileMgrComp/dist/Debug/GNU-Linux/libFileMgrComp.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libTextSearchComp.${CND_DLIB_EXT}: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/textsearchcomp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libTextSearchComp.${CND_DLIB_EXT} ${OBJECTFILES} ${LDLIBSOPTIONS} -shared -fPIC
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/textsearchcomp ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/Search.o: Search.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Search.o Search.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Search.o Search.cpp
 
 # Subprojects
 .build-subprojects:
@@ -76,7 +76,7 @@ ${OBJECTDIR}/Search.o: Search.cpp
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
 	${RM} -r ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libFileMgrComp.so
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libTextSearchComp.${CND_DLIB_EXT}
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/textsearchcomp
 
 # Subprojects
 .clean-subprojects:

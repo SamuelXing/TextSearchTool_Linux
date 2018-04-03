@@ -9,11 +9,11 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=libTextSearchComp.so
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/libTextSearchComp.so
+CND_ARTIFACT_NAME_Debug=textsearchcomp
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/textsearchcomp
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=libTextSearchComp.so.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/libTextSearchComp.so.tar
+CND_PACKAGE_NAME_Debug=textsearchcomp.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/textsearchcomp.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux

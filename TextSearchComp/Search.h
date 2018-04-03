@@ -20,17 +20,14 @@ public:
 		delete pFileMgr;
 	};
 	void setText(const std::string&);
-	void scanner(const std::string& fileSpec);
-	void done();
-	///////////////////////
+        void scanner(const std::string& fileSpec, const std::string& reg);
 	void setFileMgr(IFileMgr* IfileMgr);
-	void put(const std::string& path, const std::vector<std::string>& filePatterns, const std::string& reg);
-	void put(const std::string&);
+	void startSearching(const std::string& path, const std::vector<std::string>& filePatterns, const std::string& reg);
 	void search();
-	std::string get();
-	void scanner(const std::string& fileSpec, const std::string& reg);
+        bool done();
+        std::string get();
 private:
-	BlockingQueue<std::string> q_;
+        BlockingQueue<std::string> q_;
 	IFileMgr * pFileMgr;
 	std::string text_;
         std::thread* t_;

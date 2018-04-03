@@ -30,24 +30,14 @@ int main(int argc, char** argv)
         }
         
         std::thread::id this_id = std::this_thread::get_id();
-        std::cout << "\n***********************\n";
         std::cout << "main thread " << this_id << " is running" <<std::endl;
-        std::cout << "***********************\n\n";
+        std::cout << "========================================\n";
         
 	IFileMgr* IfileMgr = FileMgrFactory::CreateFileMgr();
 	ISearch* searchInstance = SearchCompFactory::CreateSearchComp();
 	searchInstance->setFileMgr(IfileMgr);
-	searchInstance->put(path, filePatterns, regStr);
-
-	std::cout << "\n\n  Results: \n";
-	std::cout << "=========================\n";
-	std::string msg;
-	do
-	{
-            msg = searchInstance->get();
-            std::cout << msg << std::endl;
-	} while (msg != "END");
-
+	searchInstance->startSearching(path, filePatterns, regStr);
+        
 	return 0;
 }
 

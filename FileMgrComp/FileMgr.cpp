@@ -24,7 +24,8 @@ void FileMgr::traverseHelper(const std::string& path, const std::vector<std::str
 		for (size_t j = 0; j < matchedFileNames.size(); j++)
 		{
 			std::string filePath = Path::fileSpec(path, matchedFileNames[j]);
-			this->q_.enQ(filePath);
+                        std::array<std::string, 2> record = {filePath, "FILE"};
+			this->q_.enQ(record);
 			std::cout << "Found: " << filePath << std::endl;
 		}
 	}
@@ -47,7 +48,8 @@ void FileMgr::traverseAndEnQ(const std::string& path, const std::vector<std::str
 	traverseHelper(path, filePatterns);
 	std::cout << "-------------------------------------------------\n";
 	std::cout << "Total: " << this->q_.size() << " files matched\n";
-	this->q_.enQ("EOF");
+        std::array<std::string, 2> record = {"", "EOF"};
+	this->q_.enQ(record);
 	return;
 }
 
@@ -81,7 +83,7 @@ void FileMgr::addPattern(const std::string& pattern)
 }
 
 
-std::string FileMgr::get() 
+std::array<std::string, 2> FileMgr::get() 
 {
 	return this->q_.deQ();
 }

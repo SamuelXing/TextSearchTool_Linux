@@ -74,6 +74,11 @@ ${OBJECTDIR}/FileMgr.o: FileMgr.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FileMgr.o FileMgr.cpp
 
+${OBJECTDIR}/FileMgr.h.gch: FileMgr.h
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -fPIC  -MMD -MP -MF "$@.d" -o "$@" FileMgr.h
+
 ${OBJECTDIR}/FileMgrFactory.o: FileMgrFactory.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"

@@ -19,12 +19,10 @@ public:
 	virtual ~ISearch() {}
         virtual void setFileMgr(IFileMgr* IfileMgr) = 0;
 	virtual void setText(const std::string& reg) = 0;
-	virtual void scanner(const std::string& fileSpec) = 0;
 	virtual void scanner(const std::string& fileSpec, const std::string& text) = 0;
-	virtual void put(const std::string& path, const std::vector<std::string>& filePatterns, const std::string& reg) = 0;
-        virtual void put(const std::string&) = 0;
-	virtual std::string get() = 0;
-	virtual void done() = 0;
+	virtual void startSearching(const std::string& path, const std::vector<std::string>& filePatterns, const std::string& reg) = 0;
+        virtual bool done() = 0;
+        virtual std::string get() = 0;
 private:
 
 };

@@ -20,17 +20,16 @@ class FileMgr : public IFileMgr
 public:
 	FileMgr();
 	virtual void traverseAndEnQ(const std::string& path, const std::vector<std::string>& filePatterns);
-	virtual void traverseAndEnQ();
-	virtual std::string get();
-	void addPattern(const std::string& pattern);
+        void addPattern(const std::string& pattern);
 	void setPath(const std::string& path);
+        virtual void traverseAndEnQ();
+	virtual std::array<std::string, 2> get();
 	
 private:
-	BlockingQueue<std::string> q_;
+	BlockingQueue<std::array<std::string, 2>> q_;
 	path path_;
 	patterns patterns_;
 	void traverseHelper(const std::string& path, const std::vector<std::string>& filePatterns);
-	void traverseHelper(const std::string& path);
 };
 #endif // !FILEMGR_H
 

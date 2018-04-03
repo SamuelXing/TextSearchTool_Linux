@@ -10,6 +10,7 @@
 #define IFILEMGR_H
 #include<string>
 #include<vector>
+#include<array>
 
 class IFileMgr
 {
@@ -20,7 +21,7 @@ public:
 	virtual void traverseAndEnQ() = 0;
 	virtual void setPath(const std::string&) = 0;
 	virtual void addPattern(const std::string&) = 0;
-	virtual std::string get() = 0;
+	virtual std::array<std::string, 2> get() = 0;
 private:
 
 };
