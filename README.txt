@@ -1,5 +1,5 @@
 Description: 
-This is the Linux part of the TextSearchTool - CSE775 Distributed Object, Project
+This is the Linux part of the TextSearchTool - CSE775 Distributed Object, Project #1
 
 Author: 
 Zihao Xing
@@ -30,10 +30,10 @@ Compile & Clean:
 Run:
 1, start terminal
 2, cd path/to/project
-3, ./run.sh # compile
+3, ./run.sh # run
 
 Notes:
-1, Currently supports searching "*.txt", "*.h", "*.cpp"
+1, Currently supports searching "*.txt", "*.h", "*.cpp", etc
 2, Becase of the threading feature, the output may not that clear.
 
 LISENCE:
