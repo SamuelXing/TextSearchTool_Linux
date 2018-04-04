@@ -1,20 +1,28 @@
+//////////////////////////////////////////////////////////////
+// Search.cpp - Search class implementation                 //
+// ver 1.0                                                  //
+// Zihao Xing, CSE775 - Distributed Object, Spring 2018     //
+//////////////////////////////////////////////////////////////
+
 #include "Search.h"
 #include<regex>
 #include<exception>
 #include<fstream>
 #include<algorithm>
 
+// -----<factory method>------
 ISearch*  SearchCompFactory::CreateSearchComp()
 {
     return new Search();
 }
 
+// -----<factory method>------
 ISearch* CreateSearchComp()
 {
     return new Search();
 }
 
-
+// ---<for the given file, find the regular expression existed or not>------
 std::vector<int> Search::scanner(const std::string& fileSpec, const std::string& reg) 
 {
 	int lineCnt = 1;
@@ -32,7 +40,6 @@ std::vector<int> Search::scanner(const std::string& fileSpec, const std::string&
 			if (std::regex_search(line, r))
 			{
                                 rst.push_back(lineCnt);
-				//this->q_.enQ(fileSpec + ", line " + std::to_string(lineCnt) + ", " + line);
 			}
 			lineCnt++;
 		}
@@ -40,34 +47,20 @@ std::vector<int> Search::scanner(const std::string& fileSpec, const std::string&
         return rst;
 }
 
+// -----<test stub>-------
 #ifdef TEST_SEARCHCOMP
 int main()
 {
 	std::cout << "  TEST SEARCH COMPONENT\n";
 	std::cout << "=========================\n";
-	std::vector<std::string> filePatterns;
-	filePatterns.push_back("*.h");
-	filePatterns.push_back("*.cpp");
-	std::string regStr = "(.*?)FileMgrFactory(.*?)";
-        
-        std::thread::id this_id = std::this_thread::get_id();
-        std::cout << "\nmain thread " << this_id << " is running" <<std::endl;
-        std::cout << "========================================\n\n";
-        
-	IFileMgr* IfileMgr = FileMgrFactory::CreateFileMgr();
-	ISearch* searchInstance = SearchCompFactory::CreateSearchComp();
-	searchInstance->setFileMgr(IfileMgr);
-	searchInstance->startSearching(".", filePatterns, regStr);
-        
-        
-        std::cout << "\n\nResults: \n";
-	std::cout << "=========================\n";
-	std::string msg;
-	do
+	std::vector<std::string> result;
+	std::string regStr = "(.*?)FileSys(.*?)";
+	ISearch* searchInstance = new Search();
+	result = searchInstance->scanner("Specify a filename", regStr);
+	for (int i = 0; i < result.size(); i++) 
 	{
-            msg = searchInstance->get();
-            std::cout << msg << std::endl;
-	} while (msg != "EOF");
+		std::cout << result << std::endl;
+	}
 	return 0;
 }
 #endif // TEST_SEARCHCOMP

@@ -1,16 +1,23 @@
+//////////////////////////////////////////////////////////////
+// FileMgrFactory.h - Factory Method			            //
+// ver 1.0                                                  //
+// Zihao Xing, CSE775 - Distributed Object, Spring 2018     //
+///////////////////////////////////////////////////////////////
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   FileMgrFactory.h
- * Author: parallels
- *
- * Created on April 2, 2018, 5:12 PM
- */
-
+* Package Operations:
+* -------------------
+* Factory Methods to create an instance of FileMgr.
+*
+* Required Files:
+* ---------------
+* "FileMgr.h"
+*
+* Maintenance History:
+* --------------------
+* ver 1.0 : 03 Apr 2017
+* - first release
+*
+*/
 #pragma once
 #ifndef FILEMGRFACTORY_H
 #define FILEMGRFACTORY_H
@@ -19,6 +26,7 @@
 class FileMgrFactory
 {
 public:
+        // -------<factory method>------
 	static IFileMgr* CreateFileMgr();
 };
 

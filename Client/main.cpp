@@ -1,14 +1,14 @@
-/* 
- * File:   main.cpp
- * Author: parallels
- *
- * Created on April 2, 2018, 3:50 PM
- */
+//////////////////////////////////////////////////////////////
+// main.cpp - main entry                                    //
+// ver 1.0                                                  //
+// Zihao Xing, CSE775 - Distributed Object, Spring 2018     //
+//////////////////////////////////////////////////////////////
 
 #include<iostream>
 #include<thread>
 #include "SearchEngine.h"
 
+// ------<main entry>--------
 int main(int argc, char** argv) 
 {
 	std::cout << "TextSearchComponent Demonstration\n";
